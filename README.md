@@ -12,10 +12,10 @@ What is easyAdopt?
   - Web application that allows users to view animals available for adoption.
   
   
-  
-  
-  Logistics
-  
+Logistics
    AWS S3 - Hold our static resources for the web applications (HTML, CSS, JavaScript) <br>
    AWS Cognito - Manages user pool and user accounts (Authentication)
    
+Help & Guidance
+   "Build a Serverless Web Application with AWS Lambda, Amazon API Gateway, Amazon S3, Amazon DynamoDB, and Amazon Cognito" <br>
+   https://aws.amazon.com/getting-started/hands-on/build-serverless-web-app-lambda-apigateway-s3-dynamodb-cognito/ <br>
