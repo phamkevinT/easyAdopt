@@ -2,9 +2,9 @@
 
 CMPE172 Project
 
-Team #9 Members:
-Yazan Arafeh
-Kevin Pham
+Team #9 Members: <br>
+Yazan Arafeh <br>
+Kevin Pham <br>
 
 Professor Babu Thomas
 
