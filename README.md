@@ -16,6 +16,6 @@ What is easyAdopt?
   
   Logistics
   
-   AWS S3 - Hold our static resources for the web applications (HTML, CSS, JavaScript)
+   AWS S3 - Hold our static resources for the web applications (HTML, CSS, JavaScript) <br>
    AWS Cognito - Manages user pool and user accounts (Authentication)
    
