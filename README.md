@@ -1,4 +1,4 @@
-# easyAdopt
+# easyAdopt @ http://easyadopt.s3-website-us-west-2.amazonaws.com/
 
 CMPE172 Project
 
