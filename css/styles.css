@@ -35,6 +35,11 @@ h1 {
   padding: 0 18px;
 }
 
+.signup-login-button {
+  margin-left: 25px;
+}
+
+
 /* Dog and Cat Image */
 .intro-image {
   width: 70%;
@@ -57,4 +62,43 @@ h1 {
 
 .socialmedia-icon {
   margin: 20px 20px;
+}
+
+/* Register Section */
+
+#register {
+  padding: 8% 35% 9%;
+}
+
+.register-submit-btn {
+  width: 200px;
+  background-color: white;
+  color: black;
+  margin: 8px auto 30px;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  display: block;
+
+  font-family: "Montserrat";
+  font-size: 24px;
+  opacity: 1;
+  font-weight: 700;
+}
+
+input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    padding: 12px 0;
+    margin: 10px 0 30px;
+    display: inline-block;
+    border: none;
+    border-bottom: 2px solid white;
+    background: transparent;
+    outline: none;
+
+    font-family: "Montserrat";
+    font-size: 24px;
+    opacity: 1;
+    color: black;
+    font-weight: 400;
 }
