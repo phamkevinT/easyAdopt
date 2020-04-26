@@ -17,4 +17,6 @@ Logistics
    
 Help & Guidance 
   - "Build a Serverless Web Application with AWS Lambda, Amazon API Gateway, Amazon S3, Amazon DynamoDB, and Amazon Cognito" <br>
-  - https://aws.amazon.com/getting-started/hands-on/build-serverless-web-app-lambda-apigateway-s3-dynamodb-cognito/ <br>
+        - https://aws.amazon.com/getting-started/hands-on/build-serverless-web-app-lambda-apigateway-s3-dynamodb-cognito/ <br>
+  - "DynamoDB: Exercise 3.1: Get/Add Items to DynamoDB Tables"
+        - https://medium.com/@KerrySheldon/dynamodb-exercise-3-1-get-add-items-to-dynamodb-tables-11e5f369509d
