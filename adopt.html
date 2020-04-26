@@ -1,17 +1,26 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!--
+
+      Followed this tutorial for implementing DynamoDB:
+      https://medium.com/@KerrySheldon/dynamodb-exercise-3-1-get-add-items-to-dynamodb-tables-11e5f369509d
+
+      Modified to suit our application's needs
+
+-->
+
+<html>
 
 <head>
-  <meta charset="utf-8">
-  <title>easyAdopt - Contact</title>
+  <!-- Javascript AWS SDK  -->
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.247.1.min.js"></script>
+  <!-- Your Browser-Side script -->
+  <script src="./js/app.js"></script>
 
   <!-- Google Fonts - Montserrat -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:100,400,900|Ubuntu&display=swap" rel="stylesheet">
 
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/adopt.css">
 
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/2c2854a37d.js" crossorigin="anonymous"></script>
@@ -21,13 +30,11 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-
 </head>
 
 <body>
-  <!-- Introduction Section -->
-  <section id="intro">
 
+  <section id="intro">
     <!-- Bootsrap Navigation Bar -->
     <nav class="navbar  navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="index.html">easyAdopt</a>
@@ -70,26 +77,53 @@
         <!-- Login & Sign Up Button -->
         <button type="submit" class="btn btn-dark btn-lg signup-login-button" onclick="location.href = 'register.html'"></i>Sign Up</button>
         <button type="submit" class="btn btn-outline-secondary btn-lg signup-login-button" onclick="location.href = 'signin.html'"></i>Login</button>
+
       </div>
     </nav>
-
   </section>
 
-  <div class="contact-us">
-    <!-- Form for contacting me -->
-    <form action="mailto:" method="post" enctype="text/plain">
-      <label>Your Name:</label>
-      <input type="text" name="yourName" value=""><br>
-      <label>Your Email:</label>
-      <input type="email" name="yourEmail"><br>
-      <label>Your Message:</label><br>
-      <textarea class="contact-textbox" name="yourMessage" rows="8" cols="40"></textarea><br>
-      <input type="submit" name="">
-    </form>
-
-  </div>
 
 
+  <section id="body_info">
+
+    <div class="container">
+      <div class="row">
+        <!-- create a flashcard -->
+        <form id="card-form">
+          <div class="form-row">
+            <div class="col-md-3">
+              <input id="topic-input" class="form-control" type="text" placeholder="Animal">
+            </div>
+            <div class="col-md-4">
+              <input id="front-input" class="form-control" type="text" placeholder="Breed">
+            </div>
+            <div class="col-md-4">
+              <input id="back-input" class="form-control" type="text" placeholder="Description">
+            </div>
+            <div class="col-md-1">
+              <button type='button' class="btn btn-info" onclick="addCard()">Add</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="row">
+        <!-- list of all flashcard topics -->
+        <div class="col-md-4">
+          <h4>Available Animals</h4>
+          <div id="topic-content"></div>
+        </div>
+        <!-- display flashcards for selected topic -->
+        <div class="col-md-8">
+          <div id="flashcard-content"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      //calls a method on your browser-side script - app.js
+      listTopics();
+    </script>
+
+  </section>
 </body>
 
 </html>

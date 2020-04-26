@@ -125,7 +125,7 @@ var easyAdopt = window.easyAdopt || {};
         signin(email, password,
             function signinSuccess() {
                 console.log('Successfully Logged In');
-                window.location.href = 'ride.html';
+                window.location.href = 'adopt.html';
             },
             function signinError(err) {
                 alert(err);
