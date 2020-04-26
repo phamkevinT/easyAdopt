@@ -11,6 +11,7 @@
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/about.css">
 
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/2c2854a37d.js" crossorigin="anonymous"></script>
@@ -24,7 +25,6 @@
 
 <body>
 
-  <!-- Introduction Section -->
   <section id="intro">
 
     <!-- Bootsrap Navigation Bar -->
@@ -67,45 +67,57 @@
         </ul>
 
         <!-- Login & Sign Up Button -->
-          <button type="submit" class="btn btn-dark btn-lg signup-login-button" onclick="location.href = 'register.html'"></i>Sign Up</button>
-          <button type="submit" class="btn btn-outline-secondary btn-lg signup-login-button" onclick="location.href = ''"></i>Login</button>
+        <button type="submit" class="btn btn-dark btn-lg signup-login-button" onclick="location.href = 'register.html'"></i>Sign Up</button>
+        <button type="submit" class="btn btn-outline-secondary btn-lg signup-login-button" onclick="location.href = ''"></i>Login</button>
 
       </div>
     </nav>
 
-    <!-- Title -->
-    <div class="container-title">
-
-      <div class="row">
-        <!-- Split into columns, lg = computer size, 6 = take 6 units of the 12 on the page... aka 2 columns -->
-        <div class="col-lg-6">
-          <h1>Bring home a new friend today!</h1>
-          <button type="submit" class="btn btn-danger btn-lg learnmore-button" href="contact.html"></i>Learn More</button>
-        </div>
-
-        <!-- Image of Dog & Cat -->
-        <div class="col-lg-6">
-          <img class="intro-image" src="images/dog-kitten.jpg" alt="dog-kitten">
-        </div>
-
-      </div>
-
-    </div>
-
-
   </section>
 
-  <!-- Footer with Social Media Icons -->
-  <footer id="footer">
+  <div class="top-container">
+    <h1>Our Mission</h1>
+    <br>
+    <h2>Help animals find forever homes in the easiest way possible!</h2>
+  </div>
 
-    <i class="socialmedia-icon fab fa-facebook-f"></i>
-    <i class="socialmedia-icon fab fa-twitter"></i>
-    <i class="socialmedia-icon fab fa-instagram"></i>
-    <i class="socialmedia-icon fas fa-envelope"></i>
-    <p>© Copyrght 2020 easyAdopt</p>
 
-  </footer>
+  <div class="about">
+    <h2>The Team</h2>
 
+    <div class="team-row">
+      <img class="profile_1-img" src="images/dog-kitten.jpg" alt="yazan-arafeh-img">
+      <h3>Yazan Arafeh</h3>
+      <p>
+        Lorem ipsum dolor sit amet, quis in duis, iaculis id felis. Consectetuer vestibulum, nunc urna lectus, erat ligula. Hendrerit nam, lectus ante, ut lorem eros.
+        Lorem ipsum dolor sit amet, quis in duis, iaculis id felis. Consectetuer vestibulum, nunc urna lectus, erat ligula. Hendrerit nam, lectus ante, ut lorem eros.
+        <br>
+        <a class="footer-link" href="https://www.linkedin.com/">LinkedIn</a>
+        <a class="footer-link" href="https://github.com/">GitHub</a>
+      </p>
+    </div>
+
+    <div class="team-row">
+      <img class="profile_2-img" src="images/kevin_profile.png" alt="kevin-pham-img">
+      <h3>Kevin Pham</h3>
+      <p>
+        Lorem ipsum dolor sit amet, mauris sed consectetuer. Etiam et eu, bibendum interdum, lacus quis mauris. Curabitur wisi, quisque vel eu, rutrum nam.
+        Lorem ipsum dolor sit amet, mauris sed consectetuer. Etiam et eu, bibendum interdum, lacus quis mauris. Curabitur wisi, quisque vel eu, rutrum nam.
+        <br>
+        <a class="footer-link" href="https://www.linkedin.com/in/kevintpham/">LinkedIn</a>
+        <a class="footer-link" href="https://github.com/phamkevinT">GitHub</a>
+      </p>
+    </div>
+
+  </div>
+
+  <div class="bottom-container">
+    <p>
+      Computer Engineering 172 - Enterprise Software <br>
+      Team #9 - Spring 2020 <br>
+      Professor Babu Thomas <br>
+    </p>
+  </div>
 
 </body>
 
