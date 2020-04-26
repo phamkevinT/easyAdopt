@@ -1,0 +1,111 @@
+<!--
+
+      Followed this tutorial for implementing DynamoDB:
+      https://medium.com/@KerrySheldon/dynamodb-exercise-3-1-get-add-items-to-dynamodb-tables-11e5f369509d
+
+      Modified to suit our application's needs
+
+-->
+
+<html>
+
+<head>
+  <!-- Javascript AWS SDK  -->
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.247.1.min.js"></script>
+  <!-- Your Browser-Side script -->
+  <script src="./js/app.js"></script>
+
+  <!-- Google Fonts - Montserrat -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,400,900|Ubuntu&display=swap" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/adopt.css">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/2c2854a37d.js" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <section id="intro">
+    <!-- Bootsrap Navigation Bar -->
+    <nav class="navbar  navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="index.html">easyAdopt</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+
+          <!-- Home button -->
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+
+          <!-- Adopt button -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Adopt
+            </a>
+            <!-- Dropdown menu of Adopt button -->
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="adopt.html">Available Animals</a>
+              <a class="dropdown-item" href="https://www.sanjoseca.gov/your-government/departments-offices/animal-care-services/animal-care-services-2">San Jose Animal Care Center</a>
+              <a class="dropdown-item" href="https://www.sccgov.org/sites/asc/Pages/home.aspx">County of Santa Clara Animal Services</a>
+            </div>
+          </li>
+
+          <!-- Contact button -->
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+
+          <!-- About button -->
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+        </ul>
+
+        <!-- Login & Sign Up Button -->
+        <button type="submit" class="btn btn-dark btn-lg signup-login-button" onclick="location.href = 'register.html'"></i>Sign Up</button>
+        <button type="submit" class="btn btn-outline-secondary btn-lg signup-login-button" onclick="location.href = 'signin.html'"></i>Login</button>
+
+      </div>
+    </nav>
+  </section>
+
+
+
+  <section id="body_info">
+
+    <div class="container">
+
+      <div class="row">
+        <!-- list of all flashcard topics -->
+        <div class="col-md-4">
+          <h4>Available Animals</h4>
+          <div id="topic-content"></div>
+        </div>
+        <!-- display flashcards for selected topic -->
+        <div class="col-md-8">
+          <div id="flashcard-content"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      //calls a method on your browser-side script - app.js
+      listTopics();
+    </script>
+
+  </section>
+</body>
+
+</html>
