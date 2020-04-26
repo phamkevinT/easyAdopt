@@ -1,0 +1,89 @@
+h1 {
+  color: #66BFBF;
+  font-family: 'Sacramento', cursive;
+  font-size: 4rem;
+  margin: 50px auto 0 auto;
+  text-align: center;
+}
+
+h2 {
+  color: #66BFBF;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.25rem;
+  font-weight: normal;
+  text-align: center;
+}
+
+h3 {
+  color: #11999E;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+/* Navigation Bar */
+
+.navbar-brand {
+  font-family: "Ubuntu";
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding-right: 1.5rem;
+}
+
+.navbar-nav {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-item {
+  padding: 0 18px;
+}
+
+.signup-login-button {
+  margin-left: 25px;
+}
+
+/* Top Portion of Site */
+.top-container {
+  background-color: #e1f2fb;
+  position: relative;
+  padding-top: 75px;
+  padding-bottom: 100px;
+  margin-bottom: 75px;
+}
+
+/* Bottom Portion of Site */
+.bottom-container {
+  background-color: #e1f2fb;
+  position: relative;
+  padding-top: 75px;
+  padding-bottom: 100px;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #11999E;
+}
+
+/* Middle Portion of Site (Team Members) */
+.team-row {
+  line-height: 2;
+  margin: 100px auto 150px auto;
+  text-align: left;
+  width: 50%;
+}
+
+/* First Profile Picture */
+.profile_1-img {
+  float: left;
+  margin-right: 30px;
+  width: 25%;
+}
+
+/* Second Profile Picture */
+.profile_2-img {
+  float: right;
+  margin-left: 30px;
+  width: 25%;
+}
