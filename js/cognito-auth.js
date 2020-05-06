@@ -33,6 +33,7 @@ var easyAdopt = window.easyAdopt || {};
         AWSCognito.config.region = _config.cognito.region;
     }
 
+    // Sign Out Function
     easyAdopt.signOut = function signOut() {
         userPool.getCurrentUser().signOut();
     };
@@ -60,6 +61,8 @@ var easyAdopt = window.easyAdopt || {};
      * Cognito User Pool functions
      */
 
+
+    // Register Function
     function register(email, password, onSuccess, onFailure) {
         var dataEmail = {
             Name: 'email',
@@ -78,6 +81,7 @@ var easyAdopt = window.easyAdopt || {};
         );
     }
 
+    // Sign In Function
     function signin(email, password, onSuccess, onFailure) {
         var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails({
             Username: email,
@@ -91,6 +95,7 @@ var easyAdopt = window.easyAdopt || {};
         });
     }
 
+    // Verify Email Function
     function verify(email, code, onSuccess, onFailure) {
         createCognitoUser(email).confirmRegistration(code, true, function confirmCallback(err, result) {
             if (!err) {
@@ -101,6 +106,7 @@ var easyAdopt = window.easyAdopt || {};
         });
     }
 
+    // Creating new user and add to Cognito User Pool
     function createCognitoUser(email) {
         return new AmazonCognitoIdentity.CognitoUser({
             Username: email,
@@ -118,6 +124,7 @@ var easyAdopt = window.easyAdopt || {};
         $('#verifyForm').submit(handleVerify);
     });
 
+    // After successful signin, redirect to adopt_nologin.html
     function handleSignin(event) {
         var email = $('#emailInputSignin').val();
         var password = $('#passwordInputSignin').val();
@@ -125,7 +132,7 @@ var easyAdopt = window.easyAdopt || {};
         signin(email, password,
             function signinSuccess() {
                 console.log('Successfully Logged In');
-                window.location.href = 'adopt.html';
+                window.location.href = 'adopt_nologin.html';
             },
             function signinError(err) {
                 alert(err);
@@ -133,6 +140,7 @@ var easyAdopt = window.easyAdopt || {};
         );
     }
 
+    // After successful register, prompt user to check email
     function handleRegister(event) {
         var email = $('#emailInputRegister').val();
         var password = $('#passwordInputRegister').val();
@@ -158,6 +166,7 @@ var easyAdopt = window.easyAdopt || {};
         }
     }
 
+    //  Verify Email
     function handleVerify(event) {
         var email = $('#emailInputVerify').val();
         var code = $('#codeInputVerify').val();
