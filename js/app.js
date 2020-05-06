@@ -7,28 +7,34 @@
 
 
 **/
-
+// The Animal Information
 const flashCardTable = 'flashcards';
+// The Animal Category
 const topicTable = 'topics';
-//insert pool id of your congito pool
+
+// Pool ID taken from Cognito
 const IdentityPoolId = 'us-west-2:36f91fa7-b312-43d7-b60e-ba1cac4a23ff';
 const credentials = new AWS.CognitoIdentityCredentials({ IdentityPoolId })
-//insert your region
+// Region registered with AWS
 const region = 'us-west-2';
 AWS.config.update({
   region,
   credentials
 });
+
+// Connect with DynamoDB
 const ddb = new AWS.DynamoDB({
   apiVersion: '2012-10-08'
 });
+
+// Create Flashcard with information from 'topic', 'front', 'back'
 function addCard() {
   const topic = document.getElementById("topic-input").value
   const front = document.getElementById("front-input").value
   const back = document.getElementById("back-input").value
   const params = {
     "RequestItems": {
-      "topics": [ //params for the topics item
+      "topics": [ // Input for Topic/Category
         {
           "PutRequest": {
             "Item": {
@@ -39,7 +45,7 @@ function addCard() {
           }
         }
       ],
-      "flashcards": [ //params for the flashcards item
+      "flashcards": [ // Inputs for Flashcard
         {
           "PutRequest": {
             "Item": {
@@ -53,6 +59,8 @@ function addCard() {
       ]
     }
   }
+
+  // Write to dynamoDB and reset flash card
   ddb.batchWriteItem(params, function(err, data) {
     if (err) {
       return alert('Error: ' + err.message);
@@ -62,26 +70,30 @@ function addCard() {
     }
   })
 }
+
+// Show flashcard that is associated with a category
 function showCards(event) {
-  //get the topic name from the event
+  // Get the topic/category name from the event
   const topic = event.target.dataset.topic
   const params = {
-   "TableName": flashCardTable, //table you are going to query
+   "TableName": flashCardTable, // Table you are going to query
    "ExpressionAttributeValues": {
-    ":topic" : {"S": topic} //the field and value that you want to query by (including its data type "S" - string)
+    ":topic" : {"S": topic} // The field and value that you want to query by (including its data type "S" - string)
    },
    "ExpressionAttributeNames": {
-     "#B": "back" //because back is a reserve word, you need to alias it
+     "#B": "back" // Because back is a reserve word, you need to alias it
    },
    "KeyConditionExpression": "topic = :topic",
-   "ProjectionExpression": "front, #B" //the attributes you want returned
+   "ProjectionExpression": "front, #B" // The attributes you want returned
   };
 
+  // Querying the Dyanamo Database
   ddb.query(params, function(err, data) {
     if (err) {
       return alert('Error: ' + err.message);
     } else {
       clearFlashCards()
+      // Number of flashcards for that category
       const numCards = data.Count
       const cards = data.Items
       const flashCardHtml = cards.map(function(card) {
@@ -94,6 +106,8 @@ function showCards(event) {
     }
   })
 }
+
+// Show categories
 function listTopics() {
   clearFlashCards()
   clearTopicList()
@@ -101,8 +115,11 @@ function listTopics() {
    "TableName": topicTable
   };
 
-  //performs a scan operation to get all items from the topics table
-  //because you are not searching based on a primary key value, this uses a less-performant scan operation rather than a query
+
+  // Comment made by AWS Team
+  // Performs a scan operation to get all items from the topics table
+  // because you are not searching based on a primary key value,
+  // this uses a less-performant scan operation rather than a query
   ddb.scan(params, function(err, data) {
     if (err) {
       return alert('Error: ' + err.message);
@@ -115,13 +132,16 @@ function listTopics() {
     }
   });
 }
+
+// Get the topic/category
 function getTopicHtml(topic) {
   return `<p>
     <button class="btn btn-info btn-xs" data-topic="${topic}"
     onClick="showCards(event)">Show</button>
     ${topic}</p>`
 }
-//misc helper functions
+
+// Misc helper functions
 function topicContainer() {
   return document.getElementById('topic-content')
 }

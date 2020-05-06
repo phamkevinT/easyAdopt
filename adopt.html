@@ -1,6 +1,6 @@
 <!--
 
-      Followed this tutorial for implementing DynamoDB:
+      Followed this tutorial for implementing DynamoDB & Adding Items to flashcard:
       https://medium.com/@KerrySheldon/dynamodb-exercise-3-1-get-add-items-to-dynamodb-tables-11e5f369509d
 
       Modified to suit our application's needs
@@ -34,6 +34,7 @@
 
 <body>
 
+  <!-- Navigation Bar -->
   <section id="intro">
     <!-- Bootsrap Navigation Bar -->
     <nav class="navbar  navbar-expand-lg navbar-light bg-light">
@@ -107,19 +108,19 @@
         </form>
       </div>
       <div class="row">
-        <!-- list of all flashcard topics -->
+        <!-- List of all animal categories -->
         <div class="col-md-4">
           <h4>Available Animals</h4>
           <div id="topic-content"></div>
         </div>
-        <!-- display flashcards for selected topic -->
+        <!-- Flashcard for each animal categories -->
         <div class="col-md-8">
           <div id="flashcard-content"></div>
         </div>
       </div>
     </div>
     <script>
-      //calls a method on your browser-side script - app.js
+      // This calls a method on your browser-side script - app.js
       listTopics();
     </script>
 

@@ -75,8 +75,7 @@
         </ul>
 
         <!-- Login & Sign Up Button -->
-        <button type="submit" class="btn btn-dark btn-lg signup-login-button" onclick="location.href = 'register.html'"></i>Sign Up</button>
-        <button type="submit" class="btn btn-outline-secondary btn-lg signup-login-button" onclick="location.href = 'signin.html'"></i>Login</button>
+        <button type="submit" class="btn btn-outline-secondary btn-lg signup-login-button" onclick="location.href = 'index.html'"></i>Logout</button>
 
       </div>
     </nav>
@@ -87,7 +86,25 @@
   <section id="body_info">
 
     <div class="container">
-
+      <div class="row">
+        <!-- create a flashcard -->
+        <form id="card-form">
+          <div class="form-row">
+            <div class="col-md-3">
+              <input id="topic-input" class="form-control" type="text" placeholder="Animal">
+            </div>
+            <div class="col-md-4">
+              <input id="front-input" class="form-control" type="text" placeholder="Breed">
+            </div>
+            <div class="col-md-4">
+              <input id="back-input" class="form-control" type="text" placeholder="Description">
+            </div>
+            <div class="col-md-1">
+              <button type='button' class="btn btn-info" onclick="addCard()">Add</button>
+            </div>
+          </div>
+        </form>
+      </div>
       <div class="row">
         <!-- list of all flashcard topics -->
         <div class="col-md-4">
