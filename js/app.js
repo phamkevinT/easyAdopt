@@ -34,7 +34,7 @@ function addCard() {
   const back = document.getElementById("back-input").value
   const params = {
     "RequestItems": {
-      "topics": [ // Input for Topic/Category
+      "topics": [ // Input for Topic/Category Table
         {
           "PutRequest": {
             "Item": {
@@ -45,7 +45,7 @@ function addCard() {
           }
         }
       ],
-      "flashcards": [ // Inputs for Flashcard
+      "flashcards": [ // Inputs for Flashcard Table
         {
           "PutRequest": {
             "Item": {
