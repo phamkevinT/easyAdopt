@@ -8,6 +8,7 @@ Yazan Arafeh <br>
 Kevin Pham <br>
 
 Professor Babu Thomas
+San Jose State University
 
 What is easyAdopt?
   - Web application that allows users to view animals available for adoption.
@@ -15,6 +16,8 @@ What is easyAdopt?
 Logistics 
   - AWS S3 - Hold our static resources for the web applications (HTML, CSS, JavaScript) <br>
   - AWS Cognito - Manages user pool and user accounts (Authentication)
+  - AWS DynamoDB - Database
+  - HTML/CSS/JavaScript
    
 Help & Guidance 
   - "Build a Serverless Web Application with AWS Lambda, Amazon API Gateway, Amazon S3, Amazon DynamoDB, and Amazon Cognito" <br>
